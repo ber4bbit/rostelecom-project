@@ -1,0 +1,22 @@
+.description {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+    font-family: 'Rostelecom Basis';
+}
+
+.description__header {
+    width: 80%;
+    margin-bottom: 2rem;
+}
+
+.description__title {
+    font-weight: 600;
+    font-size: 1.4em;
+    margin-bottom: 2rem;
+}
+
+.description__subtitle {
+    line-height: 1.5rem;
+}

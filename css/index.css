@@ -1,0 +1,72 @@
+@import url(./components/presentation/header.css);
+@import url(./components/presentation/main.css);
+@import url(./components/presentation/footer.css);
+
+@import url(./components/tariffs/header.css);
+@import url(./components/tariffs/main.css);
+@import url(./components/tariffs/footer.css);
+
+@import url(./components/description/header.css);
+@import url(./components/description/main.css);
+
+@import url(./common/fonts.css);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    position: relative;
+}
+
+:root {
+    --limeGreen: #6eb456;
+    --orange: #e1473d;
+}
+
+.swiper {
+    width: 750px;
+    height: 300px;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+    color: #fea3a0;
+    font-size: 1em !important;
+    border: 2px solid #fea3a0;
+    padding: 8px 12px;
+    border-radius: 100%;
+    transition: background-color .3s, color .3s, border .3s;
+}
+
+.swiper-button-next:hover::after {
+    background-color: #fea3a0;
+    color: white;
+    border: 2px solid transparent
+}
+
+.swiper-button-prev:hover::after {
+    background-color: #fea3a0;
+    color: white;
+    border: 2px solid transparent
+}
+
+.telegram-link {
+    position: fixed;
+    right: 3%;
+    bottom: 2%;
+}
+
+.telegram-link:hover svg {
+    fill: #7800ff;
+}

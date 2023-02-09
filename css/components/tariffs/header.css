@@ -1,0 +1,26 @@
+.tariffs {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Rostelecom Basis';
+    margin-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.tariffs__header {
+    text-align: center;
+}
+
+.tariffs__title {
+    font-weight: 700;
+    font-size: 2em;
+    letter-spacing: 2px;
+}
+
+.tariffs__subtitle {
+    font-weight: 500;
+    font-size: 1.2em;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+}

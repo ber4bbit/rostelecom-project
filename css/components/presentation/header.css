@@ -1,0 +1,78 @@
+.presentation {
+    background-color: white;
+    font-family: 'Rostelecom Basis', sans-serif;
+}
+
+.presentation__header {
+    position: fixed;
+    height: 15vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: saturate(120%) blur(20px);
+    z-index: 11;
+}
+
+.presentation__header-wrapper {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo {
+    height: 3rem;
+}
+
+.header__city {
+    color: var(--limeGreen);
+    border: 2px solid var(--limeGreen);
+    padding: 12px 18px;
+    border-radius: 24px;
+    transition: color .3s, background-color .3s;
+}
+
+.header__city:hover {
+    color: white;
+    background-color: var(--limeGreen);
+    cursor: pointer;
+}
+
+.header__link {
+    color: var(--limeGreen);
+    text-decoration: none;
+}
+
+.header__link_phone {
+    color: var(--limeGreen);
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.header__link-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header__link-description {
+    letter-spacing: .03em;
+}
+
+.header__btn {
+    background-color: transparent;
+    border: 2px solid var(--orange);
+    color: var(--orange);
+    font-family: 'Rostelecom Basis';
+    padding: 12px 18px;
+    font-size: 1em;
+    border-radius: 24px;
+    transition: color .3s, background-color .3s;
+}
+
+.header__btn:hover {
+    color: white;
+    background-color: var(--orange);
+    cursor: pointer;
+}

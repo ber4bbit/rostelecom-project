@@ -1,0 +1,13 @@
+.tariffs__footer {
+    width: 80%;
+    margin-top: 2rem;
+}
+
+.tariffs__description {
+    margin-bottom: 1rem;
+    line-height: 1.5rem;
+}
+
+.tariffs__description:last-child {
+    margin-bottom: 0;
+}

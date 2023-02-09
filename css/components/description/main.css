@@ -1,0 +1,68 @@
+.description__main {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5rem 0;
+}
+
+.main__title_services {
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.main__services {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3rem;
+}
+
+.services__service {
+    display: flex;
+    flex-direction: column;
+    border-radius: 9px;
+    box-shadow: 0 0 .3rem grey;
+    padding: 2rem 0;
+    width: 40%;
+    align-items: center;
+}
+
+.service__image {
+    width: 80%;
+}
+
+.service__features {
+    list-style-type: none;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid rgb(216, 216, 216);
+    padding-bottom: 2rem;
+}
+
+.service__features li {
+    margin-bottom: .5rem;
+}
+
+.service__features li:last-child {
+    margin-bottom: 0;
+}
+
+.service__title {
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-bottom: 1rem;
+}
+
+.service__price {
+    font-size: 1.2em;
+    margin-top: 2rem;
+}
+
+.service__price span {
+    font-weight: 600;
+    font-size: 1.4em;
+}
+
+.service__btn {
+    
+}
