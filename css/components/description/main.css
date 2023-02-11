@@ -73,3 +73,18 @@
 .service__btn {
     
 }
+
+@media screen and (max-width: 501px) {
+    .main__services {
+        flex-direction: column;
+    }
+
+    .services__service {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .services__service:last-child {
+        margin-bottom: 0;
+    }
+}

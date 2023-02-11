@@ -38,3 +38,18 @@
     fill: white;
     margin-bottom: 1rem;
 }
+
+@media screen and (max-width: 501px) {
+    .footer__advantages {
+        flex-direction: column;
+    }
+
+    .advantage {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .advantage:last-child {
+        margin-bottom: 0;
+    }
+}

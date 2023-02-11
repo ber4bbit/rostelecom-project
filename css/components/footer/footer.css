@@ -2,7 +2,7 @@
     width: 100vw;
     display: flex;
     justify-content: center;
-    font-family: 'Rostelecom Basis';
+    font-family: 'Rostelecom Basis Regular';
     /* border-top: solid 1px rgb(216, 216, 216); */
     box-shadow: 0px -2px 2px rgb(216, 216, 216);
     padding: 2rem 0;
@@ -51,4 +51,10 @@
 .footer__link_orange {
     color: var(--orange);
     font-size: 1.2em;
+}
+
+@media screen and (max-width: 501px) {
+    .footer-wrapper {
+        width: 90%;
+    }
 }

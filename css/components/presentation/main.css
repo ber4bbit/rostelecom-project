@@ -48,3 +48,31 @@
 .slide-image {
     height: 500px;
 }
+
+@media screen and (max-width: 501px) {
+    .presentation__main-wrapper {
+        flex-direction: column;
+    }
+
+    .presentation__main-info {
+        order: 2;
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+    .swiper {
+        width: 100vw !important;
+    }
+
+    .slide-image {
+        height: 300px;
+    }
+
+    .swiper-pagination {
+        bottom: -2px !important;
+    }
+
+    .presentation__main {
+        padding-top: 10rem;
+    }
+}

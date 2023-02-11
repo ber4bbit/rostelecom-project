@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     margin-bottom: 5rem;
-    font-family: 'Rostelecom Basis';
+    font-family: 'Rostelecom Basis Regular';
 }
 
 .callback__main {
@@ -38,7 +38,7 @@
 }
 
 .callback__input {
-    font-family: 'Rostelecom Basis';
+    font-family: 'Rostelecom Basis Regular';
     border: none;
     border-radius: 9px;
     background-color: white;
@@ -55,7 +55,7 @@
 }
 
 .callback__input::placeholder {
-    font-family: 'Rostelecom Basis';
+    font-family: 'Rostelecom Basis Regular';
 }
 
 .callback__input:hover {
@@ -68,7 +68,7 @@
 }
 
 .callback__btn {
-    font-family: 'Rostelecom Basis';
+    font-family: 'Rostelecom Basis Regular';
     background-color: var(--orange);
     border: 2px solid transparent;
     color: white;
@@ -91,4 +91,29 @@
 
 .callback-wrapper_no-image {
     padding: 1rem 0;
+}
+
+@media screen and (max-width: 501px) {
+    .callback__image {
+        display: none;
+    }
+
+    .callback__main {
+        width: 80%;
+    }
+
+    .callback-wrapper {
+        margin-left: 0;
+        padding: 1rem 2rem;
+        text-align: center;
+    }
+
+    .callback__form {
+        flex-direction: column;
+    }
+
+    .callback__input {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+    }
 }

@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+@font-face {font-family: "Rostelecom Basis Regular";
+    src: url("./82fe5070fde20170ec8414053d0f340d.eot"); /* IE9*/
+    src: url("./82fe5070fde20170ec8414053d0f340d.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./82fe5070fde20170ec8414053d0f340d.woff2") format("woff2"), /* chrome、firefox */
+    url("./82fe5070fde20170ec8414053d0f340d.woff") format("woff"), /* chrome、firefox */
+    url("./82fe5070fde20170ec8414053d0f340d.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url("./82fe5070fde20170ec8414053d0f340d.svg#Rostelecom Basis Regular") format("svg"); /* iOS 4.1- */
+}
+
+
+
+/* @font-face {font-family: "Rostelecom Basis"; src: url("//db.onlinewebfonts.com/t/82fe5070fde20170ec8414053d0f340d.eot"); src: url("//db.onlinewebfonts.com/t/82fe5070fde20170ec8414053d0f340d.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/82fe5070fde20170ec8414053d0f340d.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/82fe5070fde20170ec8414053d0f340d.woff") format("woff"), url("//db.onlinewebfonts.com/t/82fe5070fde20170ec8414053d0f340d.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/82fe5070fde20170ec8414053d0f340d.svg#Rostelecom Basis") format("svg"); } */
