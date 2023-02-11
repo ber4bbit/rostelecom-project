@@ -11,6 +11,7 @@
     <script src="./js/libs/swiper.js" defer></script>
     <script src="./js/handlers/faqHanlder.js" defer></script>
     <script src="./js/handlers/mobileMenuHanlder.js" defer></script>
+    <script src="./js/city-identifier/index.js" defer></script>
     <title>Ростелеком</title>
 </head>
 <body>
@@ -31,7 +32,7 @@
         </div>
         <nav class="mobile-menu__navigation">
             <ul class="navigation__list">
-                <li class="navigation__list-item">Тольятти</li>
+                <li class="navigation__list-item" id="mobileMenuCityElement">Тольятти</li>
                 <li class="navigation__list-item"><a href="#tariffs" id="tariffsLink">Тарифы</a></li>
                 <li class="navigation__list-item"><a href="tel:+79506697080">8-950-669-70-80</a></li>
                 <span>Отдел подключений</span>
@@ -42,7 +43,7 @@
         <header class="presentation__header">
             <nav class="presentation__header-wrapper">
                 <img src="./assets/images/header/header-logo_ru.svg" alt="Здесь должен быть логотип компании" class="header__logo">
-                <p class="header__city">Тольятти</p>
+                <p class="header__city" id="cityElement">Тольятти</p>
                 <a href="#tariffs" class="header__link">Тарифы</a>
                 <div class="header__link-wrapper">
                     <a href="tel:+79506697080" class="header__link_phone">8-950-669-70-80</a>
