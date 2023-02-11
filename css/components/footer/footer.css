@@ -58,3 +58,17 @@
         width: 90%;
     }
 }
+
+@media screen and (max-width: 391px) {
+    .footer__logo {
+        width: 8rem;
+    }
+
+    .footer__link {
+        font-size: .6em;
+    }
+
+    .footer__link_orange {
+        font-size: .9em;
+    }
+}

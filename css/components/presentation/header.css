@@ -149,3 +149,15 @@
         display: flex;
     }
 }
+
+
+@media screen and (max-width: 391px) {
+    .header__btn {
+        padding: 8px 9px;
+        font-size: .8em;
+    }
+
+    .header__logo {
+        height: 2.5rem;
+    }
+}

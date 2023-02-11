@@ -10,6 +10,9 @@
 
 .tariffs__header {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .tariffs__title {
@@ -23,4 +26,17 @@
     font-size: 1.2em;
     margin-top: 1.5rem;
     margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 391px) {
+    .tariffs__title {
+        font-size: 1.5em;
+    }
+
+    .tariffs__subtitle {
+        font-size: 1em;
+        width: 90%;
+        text-align: center;
+        margin-right: 0;
+    }
 }
