@@ -1,0 +1,54 @@
+.footer {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    font-family: 'Rostelecom Basis';
+    /* border-top: solid 1px rgb(216, 216, 216); */
+    box-shadow: 0px -2px 2px rgb(216, 216, 216);
+    padding: 2rem 0;
+}
+
+.footer-wrapper {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__contacts {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__contacts p {
+    margin-bottom: 1rem;
+}
+
+.footer__contacts p:last-child {
+    margin-bottom: 0;
+}
+
+.footer__logo {
+    margin-bottom: .5rem;
+}
+
+.footer__link {
+    text-decoration: none;
+    color: gray;
+    font-size: .8em;
+    transition: color .2s;
+}
+
+.footer__link:hover {
+    color: var(--purple);
+}
+
+.footer__link_orange {
+    color: var(--orange);
+    font-size: 1.2em;
+}

@@ -25,7 +25,14 @@
     padding: 2rem 0;
     width: 40%;
     align-items: center;
+    transition: box-shadow .1s;
 }
+
+.services__service:hover {
+    box-shadow: 0 0 1rem #7800ff;
+}
+
+
 
 .service__image {
     width: 80%;

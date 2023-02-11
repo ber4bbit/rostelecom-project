@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="icon" href="./assets/favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="./js/libs/swiper.js" defer></script>
+    <script src="./js/handlers/faqHanlder.js" defer></script>
     <title>Ростелеком</title>
 </head>
 <body>
@@ -51,8 +53,6 @@
                             <div class="swiper-slide"><img src="./assets/images/slides/smart-home-image.jpg" class="slide-image" alt="Здесь должно быть изображение умного дома"></div>
                         </div>
                         <div class="swiper-pagination"></div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
                     </div>
                 </div>
             </div>
@@ -249,12 +249,27 @@
         </main>
         <footer class="tariffs__footer">
             <p class="tariffs__description">*Для подключения услуг Ростелекома необходимо иметь роутер. Если у вас есть роутер - подключим по Вашему. Если нет - 
-                можете купить у нас за 3200р. На тарифах с опцией "Роутер по акции" роутер можно взять в аренду по 100 ₽/месяц.
+                можете купить у нас за 3200р. На тарифах с опцией "Роутер по акции" роутер можно взять в аренду по 100 ₽/месяц. Расценки на оборудование для подключения
+                частного сектора отличаются.
             </p>
-            <p class="tariffs__description">На это сайте опубликованы только основные тарифы с различными услугами, чтобы Вы не путались. Оставьте заявку и менеджер подберет то,
+            <p class="tariffs__description">На этом сайте опубликованы только основные тарифы с различными услугами, чтобы Вы не путались. Оставьте заявку и менеджер подберет то,
                 что нужно Вам конкретно.
             </p>
         </footer>
+    </section>
+    <section class="callback">
+        <main class="callback__main">
+            <img src="./assets/images/callback/callback-image_2.png" alt="" class="callback__image">
+            <div class="callback-wrapper">
+                <p class="callback__title">Хотите быстро найти самый выгодный тариф?</p>
+                <form action="" class="callback__form">
+                    <input type="text" class="callback__input" placeholder="Ваш номер">
+                    <input type="text" class="callback__input" placeholder="Ваше имя">
+                    <button class="callback__btn">Получить консультацию</button>
+                </form>
+                <p class="callback__note">Специалист свяжется с вами в течение 10 минут</p>
+            </div>
+        </main>
     </section>
     <section class="description">
         <header class="description__header">
@@ -293,5 +308,232 @@
             </div>
         </main>
     </section>
+    <section class="faq">
+        <div class="faq-wrapper">
+            <header class="faq__title">Популярные вопросы</header>
+            <main class="faq__questions">
+                <div class="faq__question">
+                    <div class="question__header">
+                        <p class="question__title">Как выбрать тариф?</p>
+                        <svg class="question__icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                            viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                            <g>
+                                <path d="M78.466,35.559L50.15,63.633L22.078,35.317c-0.777-0.785-2.044-0.789-2.828-0.012s-0.789,2.044-0.012,2.827L48.432,67.58
+                                    c0.365,0.368,0.835,0.563,1.312,0.589c0.139,0.008,0.278-0.001,0.415-0.021c0.054,0.008,0.106,0.021,0.16,0.022
+                                    c0.544,0.029,1.099-0.162,1.515-0.576l29.447-29.196c0.785-0.777,0.79-2.043,0.012-2.828S79.249,34.781,78.466,35.559z"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="question__answers question__answers_hidden">
+                        <p class="question__answer">Тарифы отличаются по скорости, количеству каналов, технологиям подключения, наличию оборудования.</p>
+                        <p class="question__answer">Определиться с выбором помогут ответы на эти вопросы:</p>
+                        <ul class="question__answer-list">
+                            <li>какие услуги вы планируете использовать?</li>
+                            <li>какой размер абонентской платы для вас приемлем?</li>
+                            <li>какие дополнительные услуги должны быть включены в тариф?</li>
+                        </ul>
+                        <p class="question__answer">Пример запроса: нужен интернет для просмотра фильмов и новостей, общения в социальных сетях с 3-х устройств,
+                            бюджет 500 рублей. Также планирую смотреть телевидение, хочу расширенный пакет каналов.
+                            При таком наборе требований следует рассматривать тарифы на интернет и ТВ со скоростью от 100 Мбит/с.</p>
+                    </div>
+                </div>
+                <div class="faq__question">
+                    <div class="question__header">
+                        <p class="question__title">Как и где оплачивать интернет?</p>
+                        <svg class="question__icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                            viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                            <g>
+                                <path d="M78.466,35.559L50.15,63.633L22.078,35.317c-0.777-0.785-2.044-0.789-2.828-0.012s-0.789,2.044-0.012,2.827L48.432,67.58
+                                    c0.365,0.368,0.835,0.563,1.312,0.589c0.139,0.008,0.278-0.001,0.415-0.021c0.054,0.008,0.106,0.021,0.16,0.022
+                                    c0.544,0.029,1.099-0.162,1.515-0.576l29.447-29.196c0.785-0.777,0.79-2.043,0.012-2.828S79.249,34.781,78.466,35.559z"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="question__answers question__answers_hidden">
+                        <p class="question__answer">Вы можете оплатить счет за интернет банковской картой или в системе электронных платежей:</p>
+                        <ul class="question__answer-list">
+                            <li>на сайте Ростелекома</li>
+                            <li>в Личном кабинете</li>
+                            <li>по номеру 8 800 100 0 800. Нужно будет назвать номер лицевого счета или домашнего телефона, сумму платежа и данные карты;</li>
+                            <li>в системе электронных платежей Apple Pay, Google Pay, Masterpass (размер комиссии устанавливается агентом)</li>
+                            <li>в социальных сетях: Одноклассники, ВКонтакте</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="faq__question">
+                    <div class="question__header">
+                        <p class="question__title">Какое оборудование потребуется для подключения интернета?</p>
+                        <svg class="question__icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                            viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                            <g>
+                                <path d="M78.466,35.559L50.15,63.633L22.078,35.317c-0.777-0.785-2.044-0.789-2.828-0.012s-0.789,2.044-0.012,2.827L48.432,67.58
+                                    c0.365,0.368,0.835,0.563,1.312,0.589c0.139,0.008,0.278-0.001,0.415-0.021c0.054,0.008,0.106,0.021,0.16,0.022
+                                    c0.544,0.029,1.099-0.162,1.515-0.576l29.447-29.196c0.785-0.777,0.79-2.043,0.012-2.828S79.249,34.781,78.466,35.559z"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="question__answers question__answers_hidden">
+                        <p class="question__answer">Выбор оборудования зависит от технологии подключения интернета, типа и количества подключаемых устройств. Например, для подключения нескольких устройств по Wi-Fi нужен роутер (маршрутизатор),
+                            без него домашний интернет можно подключить только на один компьютер или ноутбук. </p>
+                        <p class="question__answer">Стандартные наборы устройств:</p>
+                        <ul class="question__answer-list">
+                            <li>Оптика FTTb (ETTH) — FTTx-маршрутизатор</li>
+                            <li>Оптика PON/GPON (xPON) — xPON-маршрутизатор, PON розетка</li>
+                            <li>Технология P2P — P2P-маршрутизатор c SFP-модулем, медиаконвертер</li>
+                            <li>Технология xDSL — xDSL-маршрутизатор</li>
+                        </ul>
+                        <p class="question__answer">Наши эксперты помогут вам подобрать оборудование. Если у вас уже есть роутер от Ростелекома, сообщите об этом нашему менеджеру.</p>
+                    </div>
+                </div>
+                <div class="faq__question">
+                    <div class="question__header">
+                        <p class="question__title">Как происходит подключение? В какие сроки?</p>
+                        <svg class="question__icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                            viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                            <g>
+                                <path d="M78.466,35.559L50.15,63.633L22.078,35.317c-0.777-0.785-2.044-0.789-2.828-0.012s-0.789,2.044-0.012,2.827L48.432,67.58
+                                    c0.365,0.368,0.835,0.563,1.312,0.589c0.139,0.008,0.278-0.001,0.415-0.021c0.054,0.008,0.106,0.021,0.16,0.022
+                                    c0.544,0.029,1.099-0.162,1.515-0.576l29.447-29.196c0.785-0.777,0.79-2.043,0.012-2.828S79.249,34.781,78.466,35.559z"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="question__answers question__answers_hidden">
+                        <p class="question__answer">Услуги по подключению оказываются в течение 1-2-х дней. После оформления заявки с вами свяжется менеджер и уточнит удобную для вас дату и время выезда монтажника для проведения работ.
+                            Выезд, подключение и настройка оборудования — все бесплатно.</p>
+                        <p class="question__answer">Работы обычно занимают не более двух часов. В среднем, на подключение интернета уходит 1 час, плюс 40 минут — на настройку телевидения, еще 15-20 минут — на тестирование оединения,
+                            подписание договора, передачу вам логина и пароля. Монтажник не уедет, пока вы лично не убедитесь, что интернет работает. </p>
+                    </div>
+                </div>
+                <div class="faq__question">
+                    <div class="question__header">
+                        <p class="question__title">Производится ли настройка роутера и приставки при подключении?</p>
+                        <svg class="question__icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                            viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                            <g>
+                                <path d="M78.466,35.559L50.15,63.633L22.078,35.317c-0.777-0.785-2.044-0.789-2.828-0.012s-0.789,2.044-0.012,2.827L48.432,67.58
+                                    c0.365,0.368,0.835,0.563,1.312,0.589c0.139,0.008,0.278-0.001,0.415-0.021c0.054,0.008,0.106,0.021,0.16,0.022
+                                    c0.544,0.029,1.099-0.162,1.515-0.576l29.447-29.196c0.785-0.777,0.79-2.043,0.012-2.828S79.249,34.781,78.466,35.559z"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="question__answers question__answers_hidden">
+                        <p class="question__answer">Да. Технические специалисты доставят и установят оборудование в день подключения. Также сотрудники провайдера помогут провести интернет в
+                            разные комнаты с помощью кабель-каналов. Обсудите эту возможность с менеджером.</p>
+                    </div>
+                </div>
+                <div class="faq__question">
+                    <div class="question__header">
+                        <p class="question__title">Какие документы нужны для подключения услуги?</p>
+                        <svg class="question__icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                            viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                            <g>
+                                <path d="M78.466,35.559L50.15,63.633L22.078,35.317c-0.777-0.785-2.044-0.789-2.828-0.012s-0.789,2.044-0.012,2.827L48.432,67.58
+                                    c0.365,0.368,0.835,0.563,1.312,0.589c0.139,0.008,0.278-0.001,0.415-0.021c0.054,0.008,0.106,0.021,0.16,0.022
+                                    c0.544,0.029,1.099-0.162,1.515-0.576l29.447-29.196c0.785-0.777,0.79-2.043,0.012-2.828S79.249,34.781,78.466,35.559z"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="question__answers question__answers_hidden">
+                        <p class="question__answer">При заключении договора необходим паспорт. Если его нет, подойдет один из этих документов, удостоверяющих личность:</p>
+                        <ul class="question__answer-list">
+                            <li>временное удостоверение личности гражданина РФ (форма 2П)</li>
+                            <li>удостоверение личности военнослужащего РФ</li>
+                            <li>удостоверение моряка</li>
+                            <li>военный билет – если проходите срочную военную службу по призыву</li>
+                            <li>загранпаспорт</li>
+                            <li>дипломатический или служебный паспорт</li>
+                        </ul>
+                        <p class="question__answer">Если заключаете договор на другого человека, заранее позаботьтесь о наличии рукописной доверенности и паспорта.</p>
+                        <p class="question__answer">Иностранным гражданам для заключения договора понадобятся следующие документы:</p>
+                        <ul class="question__answer-list">
+                            <li>паспорт вашего государства</li>
+                            <li>миграционная карта</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="faq__question">
+                    <div class="question__header">
+                        <p class="question__title">Можно ли использовать собственный роутер?</p>
+                        <svg class="question__icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                            viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                            <g>
+                                <path d="M78.466,35.559L50.15,63.633L22.078,35.317c-0.777-0.785-2.044-0.789-2.828-0.012s-0.789,2.044-0.012,2.827L48.432,67.58
+                                    c0.365,0.368,0.835,0.563,1.312,0.589c0.139,0.008,0.278-0.001,0.415-0.021c0.054,0.008,0.106,0.021,0.16,0.022
+                                    c0.544,0.029,1.099-0.162,1.515-0.576l29.447-29.196c0.785-0.777,0.79-2.043,0.012-2.828S79.249,34.781,78.466,35.559z"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="question__answers question__answers_hidden">
+                        <p class="question__answer">Можно. Но заранее убедитесь, что он поддерживает технологию подключения в выбранном вами тарифе. Например, роутер для FTTb не
+                            получится использовать для подключения технологии GPON, и наоборот. Также оборудование для доступа в интернет зависит от технологии подключения
+                            в вашем доме. Проверьте технические характеристики: пропускная способность вашего роутера не должна быть ниже выбранной скорости по тарифу.</p>
+                    </div>
+                </div>
+                <div class="faq__question">
+                    <div class="question__header">
+                        <p class="question__title">Как понять, какая скорость интернета мне нужна?</p>
+                        <svg class="question__icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                            viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                            <g>
+                                <path d="M78.466,35.559L50.15,63.633L22.078,35.317c-0.777-0.785-2.044-0.789-2.828-0.012s-0.789,2.044-0.012,2.827L48.432,67.58
+                                    c0.365,0.368,0.835,0.563,1.312,0.589c0.139,0.008,0.278-0.001,0.415-0.021c0.054,0.008,0.106,0.021,0.16,0.022
+                                    c0.544,0.029,1.099-0.162,1.515-0.576l29.447-29.196c0.785-0.777,0.79-2.043,0.012-2.828S79.249,34.781,78.466,35.559z"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="question__answers question__answers_hidden">
+                        <p class="question__answer">Скорость интернета зависит от ваших потребностей и количества устройств, которые вы планируете подключать.</p>
+                        <p class="question__answer">Рекомендуем выбирать тариф с запасом скорости, чтобы не замечать перепадов из-за одновременной работы нескольких устройств. Ориентируйтесь на следующие показатели:</p>
+                        <p class="question__answer">Тариф со скоростью 50 Мбит/с подходит для:</p>
+                        <ul class="question__answer-list">
+                            <li>одновременной работы 2-х устройств</li>
+                            <li>быстрого скачивания данных</li>
+                            <li>игры онлайн</li>
+                            <li>видеозвонков без задержек</li>
+                        </ul>
+                        <p class="question__answer">Тариф со скоростью 100 Мбит/с подходит для:</p>
+                        <ul class="question__answer-list">
+                            <li>одновременной работы 2-х и более устройств</li>
+                            <li>прослушивания музыки, просмотра фильмов и видеороликов сразу на нескольких устройствах</li>
+                            <li>пользования интерактивным ТВ</li>
+                        </ul>
+                        <p class="question__answer">Тариф со скоростью 250+ Мбит/с подходит для:</p>
+                        <ul class="question__answer-list">
+                            <li>одновременной работы 3-х и более устройств</li>
+                            <li>скачивания и загрузки больших объемов данных — например, фильмов в формате BluRay (40—50 ГБ)</li>
+                            <li>видеомонтажа, работы с разными форматами видео — 2К, 4К, 8К</li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+    <section class="callback">
+        <main class="callback__main">
+            <div class="callback-wrapper callback-wrapper_no-image">
+                <p class="callback__title">Остались вопросы по подключению?</p>
+                <form action="" class="callback__form">
+                    <input type="text" class="callback__input" placeholder="Ваш номер">
+                    <input type="text" class="callback__input" placeholder="Ваше имя">
+                    <button class="callback__btn">Получить консультацию</button>
+                </form>
+                <p class="callback__note">Специалист свяжется с вами в течение 10 минут</p>
+            </div>
+        </main>
+    </section>
+    <footer class="footer">
+        <div class="footer-wrapper">
+            <div class="footer__info">
+                <img src="./assets/images/header/header-logo_ru.svg" alt="Здесь должен быть логотип компании" class="footer__logo">
+                <a href="#" class="footer__link">Политика обработки данных</a>
+            </div>
+            <div class="footer__contacts">
+                <a href="tel:+79506697080" class="footer__link footer__link_orange">8-950-669-70-80</a>
+                <p>Подключить услуги</p>
+                <a href="tel:+78001000800" class="footer__link footer__link_orange">8-800-100-08-00</a>
+                <p>Поддержка клиентов</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

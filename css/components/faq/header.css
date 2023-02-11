@@ -1,0 +1,17 @@
+.faq {
+    width: 100vw;
+    font-family: 'Rostelecom Basis';
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10rem;
+}
+
+.faq-wrapper {
+    width: 70%;
+}
+
+.faq__title {
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-bottom: 2rem;
+}

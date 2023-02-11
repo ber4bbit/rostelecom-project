@@ -20,3 +20,9 @@ const swiper = new Swiper('.swiper', {
     centeredSlides: true,
 
 });
+
+// swiper.slideNext(200, true)
+
+setInterval(() => {
+    swiper.slideNext(300, true)
+}, 5000)

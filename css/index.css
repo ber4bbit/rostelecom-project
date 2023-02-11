@@ -9,6 +9,13 @@
 @import url(./components/description/header.css);
 @import url(./components/description/main.css);
 
+@import url(./components/callback/main.css);
+
+@import url(./components/faq/header.css);
+@import url(./components/faq/main.css);
+
+@import url(./components/footer/footer.css);
+
 @import url(./common/fonts.css);
 
 * {
@@ -23,11 +30,13 @@ html {
 body {
     overflow-x: hidden;
     position: relative;
+    -webkit-font-smoothing: subpixel-antialiased;
 }
 
 :root {
     --limeGreen: #6eb456;
     --orange: #e1473d;
+    --purple: #7700ff;
 }
 
 .swiper {

@@ -1,0 +1,94 @@
+.callback {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+    font-family: 'Rostelecom Basis';
+}
+
+.callback__main {
+    width: 70%;
+    box-shadow: 0 0 0.3rem gray;
+    display: flex;
+    align-items: center;
+    border-radius: 9px;
+}
+
+.callback-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5rem;
+}
+
+.callback__image {
+    width: 17%;
+}
+
+.callback__title {
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    font-size: 1.4em;
+    letter-spacing: 1px;
+}
+
+.callback__form {
+    width: 100%;
+    display: flex;
+    margin-bottom: .7rem;
+}
+
+.callback__input {
+    font-family: 'Rostelecom Basis';
+    border: none;
+    border-radius: 9px;
+    background-color: white;
+    box-shadow: 0 0 0.3rem gray;
+    padding: .5rem 1rem;
+    font-size: 1.1em;
+    margin-right: 1rem;
+    color: gray;
+    transition: box-shadow .1s;
+}
+
+.callback__input:last-child {
+    margin-right: 0;
+}
+
+.callback__input::placeholder {
+    font-family: 'Rostelecom Basis';
+}
+
+.callback__input:hover {
+    box-shadow: 0 0 0.5rem #7800ff;
+}
+
+.callback__input:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0.5rem #7800ff;
+}
+
+.callback__btn {
+    font-family: 'Rostelecom Basis';
+    background-color: var(--orange);
+    border: 2px solid transparent;
+    color: white;
+    padding: .5rem 2rem;
+    font-size: 1em;
+    border-radius: 9px;
+    transition: color .2s, background-color .2s, border .2s;
+}
+
+.callback__btn:hover {
+    cursor: pointer;
+    color: var(--orange);
+    border: 2px solid var(--orange);
+    background-color: white;
+}
+
+.callback__note {
+    color: gray;
+}
+
+.callback-wrapper_no-image {
+    padding: 1rem 0;
+}
