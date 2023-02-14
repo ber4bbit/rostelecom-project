@@ -1,0 +1,208 @@
+.modal-window-wrapper {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(161, 161, 161, 0.8);
+    z-index: 19;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-window-wrapper_hidden {
+    display: none !important;
+}
+
+.modal-window {
+    width: 70%;
+    height: max-content;
+    background-color: white;
+    box-shadow: 0 0 0.3rem grey;
+    z-index: 20;
+    padding: 3rem 3rem;
+    border-radius: 9px;
+    font-family: 'Rostelecom Basis Regular';
+}
+
+.modal-window_form {
+    width: 30%;
+    position: relative;
+}
+
+.modal-window__cross {
+    position: absolute;
+    top: 15%;
+    right: 2%;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+}
+
+.modal-window__cross_form {
+    top: 9%;
+    right: 9%;
+}
+
+.modal-window__cross span {
+    display: block;
+    background-color: var(--orange);
+    height: 2px;
+    width: 100%;
+    margin-top: 45%;
+    transform: rotate(45deg);
+    transition: background-color .2s;
+}
+
+.modal-window__cross span::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: var(--orange);
+    transform: rotate(90deg);
+    position: absolute;
+    transition: background-color .2s;
+}
+
+.modal-window__cross:hover {
+    cursor: pointer;
+}
+
+.modal-window__cross:hover span {
+    background-color: var(--purple);
+}
+
+.modal-window__cross:hover span::after {
+    background-color: var(--purple);
+}
+
+.modal-window__title {
+    margin-bottom: 1rem;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.modal-window__input {
+    border: none;
+    box-shadow: 0 0 0.3rem grey;
+    font-family: 'Rostelecom Basis Regular';
+    width: 99%;
+    font-size: 1.2em;
+    padding: .5rem 1rem;
+    border-radius: 9px;
+    transition: box-shadow .2s;
+    color: gray;
+}
+
+.modal-window__input:hover {
+    box-shadow: 0 0 0.6rem var(--purple);
+}
+
+.modal-window__input:focus-visible {
+    box-shadow: 0 0 0.3rem var(--purple);
+    outline: none;
+}
+
+.modal-window__search-result {
+    background-color: white;
+    color: gray;
+    box-shadow: 0 0 0.3rem grey;
+    padding: 0 1rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    width: 99%;
+    border-radius: 9px;
+    margin-top: -1rem;
+    display: block;
+}
+
+.modal-window__search-result_hidden {
+    display: none;
+}
+
+.modal-window__search-result p:hover {
+    transition: color .2s;
+}
+
+.modal-window__search-result p:hover {
+    color: var(--purple);
+    cursor: pointer;
+}
+
+.modal-window__list {
+    display: flex;
+    list-style-type: none;
+    margin-top: 1.5rem;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.modal-window__list-item {
+    border: 1px solid var(--orange);
+    color: var(--orange);
+    padding: .5rem 1rem;
+    font-size: 1.1em;
+    border-radius: 12px;
+    transition: border .2s, background-color .2s, color .2s;
+}
+
+.modal-window__list-item:hover {
+    color: white;
+    background-color: var(--purple);
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.modal-window__price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.modal-window__price-title {
+    margin-bottom: 1rem;
+    font-size: 1.2em;
+}
+
+.modal-window__price-number {
+    font-weight: 600;
+}
+
+.modal-window__form {
+    margin-top: 2rem;
+    border-top: 1px solid rgb(216, 216, 216);
+    padding-top: 1rem;
+}
+
+.modal-window__form p {
+    margin-bottom: 2rem;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.modal-window__input_form {
+    margin-bottom: 2rem;
+    width: calc(100% - 1rem);
+    font-size: 1.1em;
+    padding: .7rem 0;
+    padding-left: 1rem;
+}
+
+.modal-window__form-btn {
+    width: 100%;
+    background: linear-gradient(274.56deg,#ff4f12 -10.37%,#7800ff 94.74%);
+    font-family: 'Rostelecom Basis Regular';
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 9px;
+    padding: .5rem 1rem;
+    font-weight: 600;
+    transition: box-shadow .15s, background .15s;
+}
+
+.modal-window__form-btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0 0.6rem var(--purple);
+    background: linear-gradient(274.56deg,#7800ff -10.37%,#ff4f12 94.74%);
+}

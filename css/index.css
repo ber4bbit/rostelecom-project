@@ -18,6 +18,9 @@
 
 @import url(./components/mobile-menu/main.css);
 
+@import url(./components/modal-window/header.css);
+@import url(./components/modal-window/main.css);
+
 @import url(./common/fonts/fonts.css);
 
 * {

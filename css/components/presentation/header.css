@@ -26,8 +26,33 @@
     height: 3rem;
 }
 
+.header__city-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.header__city-wrapper svg {
+    width: 10px;
+    height: 16px;
+    fill: var(--orange);
+    
+}
+
+.header__city-wrapper path, circle {
+    transition: fill .15s;
+}
+
+.header__city-wrapper:hover circle {
+    fill: var(--purple);
+}
+
+.header__city-wrapper:hover path {
+    fill: var(--purple);
+}
+
 .header__city {
     color: var(--orange);
+    margin-left: .5rem;
     transition: color .15s;
 }
 
