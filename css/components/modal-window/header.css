@@ -43,6 +43,11 @@
     right: 9%;
 }
 
+.modal-window__cross_request {
+    top: 5%;
+    right: 9%;
+}
+
 .modal-window__cross span {
     display: block;
     background-color: var(--orange);

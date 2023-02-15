@@ -15,6 +15,7 @@
     <script src="./js/city-identifier/index.js" defer></script>
     <script src="./js/handlers/cityHandler.js" defer></script>
     <script src="./js/handlers/modalFormHandler.js" defer></script>
+    <script src="./js/city-identifier/getStreets.js" defer></script>
     <title>Ростелеком</title>
 </head>
 <body>
@@ -99,6 +100,20 @@
             </form>
         </div>
     </div>
+    <div class="modal-window-wrapper modal-window-wrapper_hidden" id="modalRequest">
+        <div class="modal-window modal-window_form animate__animated animate__fadeInUp">
+            <div class="modal-window__cross modal-window__cross_request" id="closeModalRequestBtn">
+                <span></span>
+            </div>
+            <p class="modal-window__title">Оставьте заявку в три клика</p>
+            <form action="" class="modal-window__form">
+                <p class="">Оставьте вашу заявку</p>
+                <input type="text" class="modal-window__input modal-window__input_form" placeholder="Ваш номер">
+                <input type="text" class="modal-window__input modal-window__input_form" placeholder="Ваше имя">
+                <button class="modal-window__form-btn">Оставить заявку</button>
+            </form>
+        </div>
+    </div>
     <section class="presentation">
         <header class="presentation__header">
             <nav class="presentation__header-wrapper">
@@ -119,7 +134,7 @@
                             </g>
                         </g>
                     </svg>
-                    <p class="header__city" id="cityElement">Москва</p>
+                    <p class="header__city" id="cityElement"></p>
                 </div>
                 <a href="#tariffs" class="header__link">Тарифы</a>
                 <div class="header__link-wrapper">

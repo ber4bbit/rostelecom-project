@@ -1,11 +1,20 @@
 const modalFormWrapper = document.getElementById('modalForm');
+const modalRequestWrapper = document.getElementById('modalRequest');
+const closeModalRequestBtn = document.getElementById('closeModalRequestBtn');
 const modalFormCloseBtn = document.getElementById('closeModalFormBtn');
 const firstTariffBtn = document.getElementById('firstTariffBtn');
 const secondTariffBtn = document.getElementById('secondTariffBtn');
 const thirdTariffBtn = document.getElementById('thirdTariffBtn');
 const fourthTariffBtn = document.getElementById('fourthTariffBtn');
+const headerModalBtn = document.querySelector('.header__btn');
 
 modalFormCloseBtn.addEventListener('click', () => modalFormWrapper.classList.add('modal-window-wrapper_hidden'));
+
+headerModalBtn.addEventListener('click', () => modalRequestWrapper.classList.remove('modal-window-wrapper_hidden'));
+
+closeModalRequestBtn.addEventListener('click', () => modalRequestWrapper.classList.add('modal-window-wrapper_hidden'));
+
+
 
 firstTariffBtn.addEventListener('click', () => {
     document.querySelectorAll('.modal-window__price-text')[0].innerText = 'С первого месяца';
