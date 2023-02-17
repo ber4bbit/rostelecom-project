@@ -10,9 +10,8 @@ geo.getCurrentPosition(result => {
     latitude = result.coords.latitude; 
     longitude = result.coords.longitude;
     let url = "https://suggestions.dadata.ru/suggestions/api/4_1/rs/geolocate/address";
-    let urlForStreets = "https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address";
     let token = "f1f5ea1fea06549f4d0285fd6c94634b2f892f20";
-    let query = { lat: latitude, lon: longitude };
+    let query = { lat: 55.7887, lon: 49.1221 };
     let options = {
         method: "POST",
         mode: "cors",
@@ -29,25 +28,8 @@ geo.getCurrentPosition(result => {
         let result = await response.json();
         region = result.suggestions[0].data.region;
         city = result.suggestions[0].data.city;
-        let optionsforStreets = {
-            method: "POST",
-            mode: "cors",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-                "Authorization": "Token " + token
-            },
-            body: JSON.stringify({query: `${city} ул`})
-        }
         
         cityElem.innerText = city;
-
-        let responseStreet = await fetch(urlForStreets, optionsforStreets);
-        let resultStreet = await responseStreet.json();
-
-        resultStreet.suggestions.forEach(element => {
-            console.log(element.value);
-        })
 
         switch(region) {
             case 'Оренбургская':

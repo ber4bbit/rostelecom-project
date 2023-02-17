@@ -16,6 +16,7 @@
     <script src="./js/handlers/cityHandler.js" defer></script>
     <script src="./js/handlers/modalFormHandler.js" defer></script>
     <script src="./js/city-identifier/getStreets.js" defer></script>
+    <script src="./js/handlers/requestFormHandler.js" defer></script>
     <title>Ростелеком</title>
 </head>
 <body>
@@ -92,25 +93,32 @@
                 <p class="modal-window__price-text">К тарифу добавлено оборудование:</p>
                 <p class="modal-window__price-number">Роутер по акции</p>
             </div>
-            <form action="" class="modal-window__form">
+            <form action="./php/sendTariffForm.php" class="modal-window__form">
                 <p class="">Оставьте вашу заявку</p>
-                <input type="text" class="modal-window__input modal-window__input_form" placeholder="Ваш номер">
-                <input type="text" class="modal-window__input modal-window__input_form" placeholder="Ваше имя">
+                <input type="text" name="user-name_tariff" class="modal-window__input modal-window__input_form" placeholder="Ваш номер*" required="required">
+                <input type="text" name="user-phone_tariff" class="modal-window__input modal-window__input_form" placeholder="Ваше имя*" required="required">
                 <button class="modal-window__form-btn">Оставить заявку</button>
             </form>
         </div>
     </div>
     <div class="modal-window-wrapper modal-window-wrapper_hidden" id="modalRequest">
-        <div class="modal-window modal-window_form animate__animated animate__fadeInUp">
+        <div class="modal-window modal-window_form modal-window_request animate__animated animate__fadeInUp">
             <div class="modal-window__cross modal-window__cross_request" id="closeModalRequestBtn">
                 <span></span>
             </div>
             <p class="modal-window__title">Оставьте заявку в три клика</p>
-            <form action="" class="modal-window__form">
-                <p class="">Оставьте вашу заявку</p>
-                <input type="text" class="modal-window__input modal-window__input_form" placeholder="Ваш номер">
-                <input type="text" class="modal-window__input modal-window__input_form" placeholder="Ваше имя">
-                <button class="modal-window__form-btn">Оставить заявку</button>
+            <form action="./php/sendRequestForm.php" method="post" class="modal-window__form" id="requestForm">
+                <p class="">Заявка на подключение</p>
+                <input type="text" class="modal-window__input modal-window__input_form" name="user-phone" placeholder="Ваш номер*" required="required">
+                <input type="text" class="modal-window__input modal-window__input_form" name="user-name" placeholder="Ваше имя и фамилия*" required="required">
+                <input type="text" id="searchStreetInput" class="modal-window__input modal-window__input_form" name="user-street" placeholder="Ваша улица (например, ул Волховская)*" required="required">
+                <ul class="streets-list modal-window-wrapper_hidden" id="streetList"></ul>
+                <div class="modal-window__input-wrapper">
+                    <input type="text" class="modal-window__input modal-window__input_form modal-window__input_appartment" name="user-appart" placeholder="Номер квартиры (опционально)">
+                    <input type="checkbox" class="modal-window__input_checkbox" name="user-private-house" id="checkboxPrivateHouse">
+                    <label for="checkboxPrivateHouse">Частный дом</label>
+                </div>
+                <button class="modal-window__form-btn" id="submitRequestBtn" type="submit">Оставить заявку</button>
             </form>
         </div>
     </div>
