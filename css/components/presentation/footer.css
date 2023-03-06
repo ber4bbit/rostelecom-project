@@ -39,6 +39,20 @@
     margin-bottom: 1rem;
 }
 
+@media screen and (max-width: 769px) {
+    .advantage__description {
+        display: none;
+    }
+
+    .footer__advantages {
+        width: 90%;
+    }
+
+    .advantage__title {
+        font-size: 1em;
+    }
+}
+
 @media screen and (max-width: 501px) {
     .footer__advantages {
         flex-direction: column;

@@ -33,6 +33,10 @@
     width: 45%;
 }
 
+.modal-window_success {
+    width: 65%;
+}
+
 .modal-window__cross {
     position: absolute;
     top: 15%;
@@ -138,12 +142,28 @@
 }
 
 .modal-window__list {
-    display: flex;
     list-style-type: none;
     margin-top: 1.5rem;
     width: 100%;
-    flex-wrap: wrap;
-    gap: 1rem;
+    height: 10rem;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding: 1rem 0.5rem;
+}
+
+.modal-window__list::-webkit-scrollbar {
+    width: 10px;
+}
+
+.modal-window__list::-webkit-scrollbar-track {
+    background: rgb(216, 216, 216);
+    border-radius: 20px;
+}
+
+.modal-window__list::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 20px;
+    border: 3px solid rgb(216, 216, 216);
 }
 
 .modal-window__list-item {
@@ -198,11 +218,15 @@
 }
 
 .modal-window__input_appartment {
-    width: 43%;
+    width: 60%;
     margin-bottom: 0;
 }
 
 .modal-window__input_error {
+    box-shadow: 0 0 0.3rem red;
+}
+
+.modal-window__input_error:focus-visible {
     box-shadow: 0 0 0.3rem red;
 }
 
@@ -223,6 +247,16 @@
     cursor: pointer;
     box-shadow: 0 0 0.6rem var(--purple);
     background: linear-gradient(274.56deg,#7800ff -10.37%,#ff4f12 94.74%);
+}
+
+.modal-window__form-btn_disabled {
+    background: gray;
+}
+
+.modal-window__form-btn_disabled:hover {
+    background: gray;
+    box-shadow: none;
+    cursor: default;
 }
 
 .streets-list {
@@ -272,6 +306,10 @@
     margin-bottom: 2rem;
 }
 
+.modal-window__input-wrapper div {
+    display: flex;
+}
+
 .modal-window__input_checkbox+label {
     height: max-content;
     transition: color .2s;
@@ -289,4 +327,73 @@
 .modal-window__input_checkbox {
     margin-left: 2rem;
     margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 500px) {
+    .modal-window__input {
+        width: 90%;
+    }
+
+    .modal-window__cross {
+        right: 5%;
+    }
+
+    .modal-window_request {
+        width: 65%;
+    }
+
+    .modal-window__title {
+        font-size: 1.2em;
+        width: 80%;
+    }
+
+    .modal-window__form p {
+        font-size: 1em;
+    }
+
+    .modal-window__input::placeholder {
+        font-size: .8em;
+    }
+
+    .modal-window__input_checkbox+label {
+        font-size: .8em;
+    }
+
+    .modal-window__input_appartment {
+        width: 90%;
+    }
+
+    .modal-window__input-wrapper {
+        flex-direction: column;
+        align-items: unset;
+    }
+
+    .modal-window__input_checkbox {
+        margin-left: 0;
+    }
+
+    .modal-window__input_appartment {
+        margin-bottom: 1rem;
+    }
+
+    .modal-window__form-btn {
+        font-size: 1em;
+        width: 95%;
+    }
+
+    .modal-window_form {
+        width: 65%;
+    }
+
+    .modal-window__price-text {
+        width: 55%;
+    }
+
+    .modal-window__price-text, .modal-window__price-number {
+        font-size: .9em;
+    }
+
+    .modal-window__price-title {
+        font-size: 1em;
+    }
 }

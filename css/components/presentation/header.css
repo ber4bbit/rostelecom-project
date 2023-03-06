@@ -165,13 +165,19 @@
     background-color: var(--purple);
 }
 
-@media screen and (max-width: 501px) {
-    .header__link-wrapper, .header__link, .header__city {
+@media screen and (max-width: 769px) {
+    .header__link-wrapper, .header__link {
         display: none;
     }
-    
+
     .header__burger {
         display: flex;
+    }
+}
+
+@media screen and (max-width: 501px) {
+    .header__city-wrapper {
+        display: none;
     }
 }
 

@@ -1,10 +1,10 @@
 <?php 
 
-$name = $_POST['user-name_tariff'];
-$phone = $_POST['user-phone_tariff'];
+$userphone = $_POST['user-phone_tariff'];
+$username = $_POST['user-name_tariff'];
 
-$emailMessage = 'Имя: ' .$name . "\n" . 'Телефон: ' . $phone . "\n";
+$emailMessage = 'Имя: ' . $username . "\n" . 'Телефон: ' . $userphone . "\n";
 
-mail('ber4bbit@gmail.com', 'Оставлена новая заявка на сайте', $emailMessage);
+mail('ber4bbit@gmail.com', 'Оставлена новая заявка на подключение тарифа', $emailMessage);
 
 ?>

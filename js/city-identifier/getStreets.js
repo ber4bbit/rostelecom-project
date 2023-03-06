@@ -18,6 +18,7 @@ let options = {
     body: JSON.stringify({query: city})
 }
 
+// Данная функция отслеживает изменения в поле ввода адреса и заносит результаты в ul
 const findStreets = async () => {
     while (streetsList.firstChild) {
         streetsList.removeChild(streetsList.firstChild);
@@ -39,6 +40,7 @@ const findStreets = async () => {
     })
 }
 
+// Это обработчик, который отслеживает изменения в поле вводы адреса 
 searchStreetInput.addEventListener('input', (event) => {
     if (event.target.value === '') streetsList.classList.add('modal-window-wrapper_hidden');
     else if (event.target.value !== '') streetsList.classList.remove('modal-window-wrapper_hidden');

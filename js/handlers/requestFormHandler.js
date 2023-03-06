@@ -1,25 +1,38 @@
-const submitRequestBtn = document.getElementById('submitRequestBtn');
-const requestForm = document.getElementById('requestForm');
-const requestInputs = Array.from(requestForm.children).slice(1, 4);
+// Отслеживание события отправки формы
+requestForm.addEventListener('submit', event => {
+    // Отмена стандартного поведения формы при отправке
+    event.preventDefault();
 
-const USERPHONE_REGEXP = /^\+?[78][-\(]?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$/;
-const USERNAME_REGEXP = /^[А-ЯЁ][а-яё]+ [А-ЯЁ][а-яё]+$/;
+    // Массив для проверки на валидность полей ввода
+    const isValidInputs = [];
 
-requestInputs.forEach(elem => {
-    elem.addEventListener('input', () => {
-        if (elem.value == '') {
-            elem.classList.add('modal-window__input_error')
-        } else if (elem.value !== '') elem.classList.remove('modal-window__input_error');
+    // Проход по полям ввода для проверки на валидность
+    requestInputsArr.forEach(input => handleInput(input));
 
-        switch (elem.getAttribute('name')) {
-            case 'user-phone':
-                if (!USERPHONE_REGEXP.test(elem.value)) elem.classList.add('modal-window__input_error');
-                else elem.classList.remove('modal-window__input_error');
-                break;
-            case 'user-name':
-                if (!USERNAME_REGEXP.test(elem.value)) elem.classList.add('modal-window__input_error');
-                else elem.classList.remove('modal-window__input_error');
-                break;
-        }
-    })
+    // Добавление атрибута каждого поля ввода, который определяет валидно ли поле ввода
+    requestInputsArr.forEach(input => isValidInputs.push(input.getAttribute("data-is-valid")));
+
+    // Условие, проверяющее есть ли невалидные поля ввода и действия, производимые если есть хотя бы одно невалидное поле
+    if (isValidInputs.includes('false')) {
+        event.preventDefault();
+        requestSubmitBtn.setAttribute('disabled', 'disabled');
+        requestSubmitBtn.classList.add('modal-window__form-btn_disabled');
+    // Если все валидно, то данные формы отправляются на почту и очищаются все поля ввода
+    } else {
+        event.preventDefault();
+        console.log('submitted');
+        $.ajax({
+            type: 'POST',
+            url: '../../php/sendRequestForm.php',
+            data: $('#requestForm').serialize(),
+            success: function() {
+                modalWindowSuccess.classList.remove('modal-window-wrapper_hidden');
+                requestInputsArr.forEach(input => input.value = '')
+                setTimeout(() => {
+                    modalWindowSuccess.classList.add('modal-window-wrapper_hidden');
+                    modalFormWrapper.classList.add('modal-window-wrapper_hidden');
+                }, 3000);
+            }
+        })
+    }
 })

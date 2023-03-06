@@ -4,23 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ростелеком, подключить интернет и ТВ. Самарская область">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="icon" href="./assets/favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>    
+    <script src="./js/libs/moment.js" defer></script>
     <script src="./js/libs/swiper.js" defer></script>
     <script src="./js/handlers/faqHanlder.js" defer></script>
     <script src="./js/handlers/mobileMenuHanlder.js" defer></script>
     <script src="./js/city-identifier/index.js" defer></script>
-    <script src="./js/handlers/cityHandler.js" defer></script>
     <script src="./js/handlers/modalFormHandler.js" defer></script>
     <script src="./js/city-identifier/getStreets.js" defer></script>
+    <script src="./js/city-identifier/getCities.js" defer></script>
+    <!-- <script src="./js/handlers/servicesHandler.js" defer></script> -->
+    <!-- <script src="./js/handlers/consultFormHandler.js" defer></script> -->
+    <script src="./js/handlers/dateHandler.js" defer></script>
+    <script src="./js/handlers/validate/inputHandler.js" defer></script>
     <script src="./js/handlers/requestFormHandler.js" defer></script>
-    <title>Ростелеком</title>
+    <script src="./js/handlers/tariffFormHandler.js" defer></script>
+
+    <title>Ростелеком подключение интернета и ТВ</title>
 </head>
 <body>
-    <a href="https://t.me/nrtk63" target="_blank" class="telegram-link">
+    <a href="https://t.me/rt_volga" target="_blank" class="telegram-link">
         <svg fill="url(#Gradient1)" width="50px" height="50px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
             <defs>
                 <linearGradient id="Gradient1">
@@ -37,7 +46,7 @@
         </div>
         <nav class="mobile-menu__navigation">
             <ul class="navigation__list">
-                <li class="navigation__list-item" id="mobileMenuCityElement">Тольятти</li>
+                <li class="navigation__list-item" id="mobileMenuCityElement">Москва</li>
                 <li class="navigation__list-item"><a href="#tariffs" id="tariffsLink">Тарифы</a></li>
                 <li class="navigation__list-item"><a href="tel:+79506697080">8-950-669-70-80</a></li>
                 <span>Отдел подключений</span>
@@ -50,26 +59,11 @@
                 <span></span>
             </div>
             <p class="modal-window__title">Выберите ваш город</p>
-            <input type="text" class="modal-window__input" placeholder="Введите название города" id="searchCityHandler">
+            <input type="text" class="modal-window__input" placeholder="Введите название города" id="searchCityInput">
             <div class="modal-window__search-result modal-window__search-result_hidden" id="searchResult">
                 <p id="searchResultCity">Москва</p>
             </div>
-            <ul class="modal-window__list">
-                <li class="modal-window__list-item" data-region="Самарская">Самара</li>
-                <li class="modal-window__list-item" data-region="Самарская">Тольятти</li>
-                <li class="modal-window__list-item" data-region="Самарская">Сызрань</li>
-                <li class="modal-window__list-item" data-region="Самарская">Новокуйбышевск</li>
-                <li class="modal-window__list-item" data-region="Самарская">Чапаевск</li>
-                <li class="modal-window__list-item" data-region="Оренбургская">Оренбург</li>
-                <li class="modal-window__list-item" data-region="Оренбургская">Орск</li>
-                <li class="modal-window__list-item" data-region="Татарстан">Казань</li>
-                <li class="modal-window__list-item" data-region="Татарстан">Набережные Челны</li>
-                <li class="modal-window__list-item" data-region="Татарстан">Нижнекамск</li>
-                <li class="modal-window__list-item" data-region="Саратовская">Саратов</li>
-                <li class="modal-window__list-item" data-region="Саратовская">Энгельс</li>
-                <li class="modal-window__list-item" data-region="Саратовская">Балаково</li>
-            </ul>
-
+            <ul class="modal-window__list modal-window-wrapper_hidden" id="citiesList"></ul>
         </div>
     </div>
     <div class="modal-window-wrapper modal-window-wrapper_hidden" id="modalForm">
@@ -82,22 +76,18 @@
             <p class="modal-window__price-title">Стоимость:</p>
             <p class=""></p>
             <div class="modal-window__price-wrapper">
-                <p class="modal-window__price-text">За три месяца</p>
+                <p class="modal-window__price-text">Первые три месяца</p>
                 <p class="modal-window__price-number"><span>555</span> ₽/месяц</p>
             </div>
             <div class="modal-window__price-wrapper">
                 <p class="modal-window__price-text">С четвертого месяца</p>
                 <p class="modal-window__price-number"><span>750</span> ₽/месяц</p>
             </div>
-            <div class="modal-window__price-wrapper">
-                <p class="modal-window__price-text">К тарифу добавлено оборудование:</p>
-                <p class="modal-window__price-number">Роутер по акции</p>
-            </div>
-            <form action="./php/sendTariffForm.php" class="modal-window__form">
-                <p class="">Оставьте вашу заявку</p>
-                <input type="text" name="user-name_tariff" class="modal-window__input modal-window__input_form" placeholder="Ваш номер*" required="required">
-                <input type="text" name="user-phone_tariff" class="modal-window__input modal-window__input_form" placeholder="Ваше имя*" required="required">
-                <button class="modal-window__form-btn">Оставить заявку</button>
+            <form class="modal-window__form" id="tariffForm">
+                <p class="">Оставьте Вашу заявку</p>
+                <input type="text" name="user-phone_tariff" class="modal-window__input modal-window__input_form" placeholder="Номер телефона*" required="required">
+                <input type="text" name="user-name_tariff" class="modal-window__input modal-window__input_form" placeholder="Имя">
+                <button class="modal-window__form-btn" id="tariffSubmitBtn" type="submit">Оставить заявку</button>
             </form>
         </div>
     </div>
@@ -106,20 +96,31 @@
             <div class="modal-window__cross modal-window__cross_request" id="closeModalRequestBtn">
                 <span></span>
             </div>
-            <p class="modal-window__title">Оставьте заявку в три клика</p>
-            <form action="./php/sendRequestForm.php" method="post" class="modal-window__form" id="requestForm">
-                <p class="">Заявка на подключение</p>
-                <input type="text" class="modal-window__input modal-window__input_form" name="user-phone" placeholder="Ваш номер*" required="required">
-                <input type="text" class="modal-window__input modal-window__input_form" name="user-name" placeholder="Ваше имя и фамилия*" required="required">
-                <input type="text" id="searchStreetInput" class="modal-window__input modal-window__input_form" name="user-street" placeholder="Ваша улица (например, ул Волховская)*" required="required">
+            <p class="modal-window__title">Оставьте заявку на подключение в пару кликов</p>
+            <form class="modal-window__form" id="requestForm">
+                <p class="">Наши специалисты с Вами свяжутся в кратчайшие сроки, чтобы обговорить детали</p>
+                <input type="text" class="modal-window__input modal-window__input_form" name="user-phone" placeholder="Номер телефона*">
+                <input type="text" class="modal-window__input modal-window__input_form" name="user-name" placeholder="Имя">
+                <input type="text" id="searchStreetInput" class="modal-window__input modal-window__input_form" name="user-street" placeholder="Адрес*" required="required">
                 <ul class="streets-list modal-window-wrapper_hidden" id="streetList"></ul>
                 <div class="modal-window__input-wrapper">
-                    <input type="text" class="modal-window__input modal-window__input_form modal-window__input_appartment" name="user-appart" placeholder="Номер квартиры (опционально)">
-                    <input type="checkbox" class="modal-window__input_checkbox" name="user-private-house" id="checkboxPrivateHouse">
-                    <label for="checkboxPrivateHouse">Частный дом</label>
+                    <input type="text" class="modal-window__input modal-window__input_form modal-window__input_appartment" name="user-appart" placeholder="Номер квартиры">
+                    <div>
+                        <input type="checkbox" class="modal-window__input_checkbox" name="user-private-house" id="checkboxPrivateHouse">
+                        <label for="checkboxPrivateHouse">Частный дом</label>
+                    </div>
                 </div>
                 <button class="modal-window__form-btn" id="submitRequestBtn" type="submit">Оставить заявку</button>
             </form>
+        </div>
+    </div>
+    <div class="modal-window-wrapper modal-window-wrapper_hidden" id="modalSuccess">
+        <div class="modal-window modal-window_success animate__animated animate__fadeInUp">
+            <div class="modal-window__cross" id="closeModalRequestBtn">
+                <span></span>
+            </div>
+            <p class="modal-window__title">Ваша заявка была успешно отправлена!</p>
+            <p>Наши специалисты с Вами свяжутся в течении 10 минут</p>
         </div>
     </div>
     <section class="presentation">
@@ -165,10 +166,10 @@
                 <div class="presentation__main-slider">
                     <div class="swiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="./assets/images/slides/internet-connection-image_2.jpg" class="slide-image" alt="Здесь должно быть изображение интернет соединения"></div>
-                            <div class="swiper-slide"><img src="./assets/images/slides/smart-tv-image.jpg" class="slide-image" alt="Здесь должно быть изображение интерактивного тв"></div>
-                            <div class="swiper-slide"><img src="./assets/images/slides/mobile-internet-image.jpg" class="slide-image" alt="Здесь должно быть изображение мобильной связи"></div>
-                            <div class="swiper-slide"><img src="./assets/images/slides/smart-home-image.jpg" class="slide-image" alt="Здесь должно быть изображение умного дома"></div>
+                            <div class="swiper-slide"><img src="./assets/images/slides/internet-connection-image_text.png" class="slide-image" alt="Здесь должно быть изображение интернет соединения"></div>
+                            <div class="swiper-slide"><img src="./assets/images/slides/smart-tv-image_text.png" class="slide-image" alt="Здесь должно быть изображение интерактивного тв"></div>
+                            <div class="swiper-slide"><img src="./assets/images/slides/mobile-internet-image_text.png" class="slide-image" alt="Здесь должно быть изображение мобильной связи"></div>
+                            <div class="swiper-slide"><img src="./assets/images/slides/smart-home-image_text.png" class="slide-image" alt="Здесь должно быть изображение умного дома"></div>
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
@@ -263,7 +264,7 @@
     <section class="tariffs" id="tariffs">
         <header class="tariffs__header">
             <p class="tariffs__title">Выберите свой тариф</p>
-            <p class="tariffs__subtitle">Успейте подключиться до 28.02 и получите скидку 30%!</p>
+            <p class="tariffs__subtitle">Успейте подключиться до <span id="untilPromoDate"></span> и получите скидку 30%!</p>
         </header>
         <main class="tariffs__main">
             <div class="tariffs__tariff">
@@ -330,7 +331,7 @@
                     </ul>
                 </main>
                 <footer class="tariff__footer">
-                    <p class="tariff__price_promo"><span id="tariffPricePromo">555</span> ₽ за 3 месяца</p>
+                    <p class="tariff__price_promo"><span id="tariffPricePromo">555</span> ₽ первые три месяца</p>
                     <p>Роутер по акции</p>
                     <p class="tariff__price"><span id="tariffPrice">750</span> ₽/месяц</p>
                     <button class="tariff__btn_gradient" id="thirdTariffBtn">Подключить</button>
@@ -359,14 +360,14 @@
                     </ul>
                 </main>
                 <footer class="tariff__footer">
+                    <p class="tariff__promo-text">Роутер по акции</p>
                     <p class="tariff__price"><span>1100</span> ₽/месяц</p>
-                    <p>Роутер по акции</p>
                     <button class="tariff__btn" id="fourthTariffBtn">Подключить</button>
                 </footer>
             </div>
         </main>
         <footer class="tariffs__footer">
-            <p class="tariffs__description">*Для подключения услуг Ростелекома необходимо иметь роутер. Если у вас есть роутер - подключим по Вашему. Если нет - 
+            <p class="tariffs__description">*Для подключения услуг Ростелекома необходимо иметь роутер. Если у Вас есть роутер - подключим по Вашему. Если нет - 
                 можете купить у нас за 3200р. На тарифах с опцией "Роутер по акции" роутер можно взять в аренду по 100 ₽/месяц. Расценки на оборудование для подключения
                 частного сектора отличаются.
             </p>
@@ -380,10 +381,10 @@
             <img src="./assets/images/callback/callback-image_2.png" alt="" class="callback__image">
             <div class="callback-wrapper">
                 <p class="callback__title">Хотите быстро найти самый выгодный тариф?</p>
-                <form action="" class="callback__form">
-                    <input type="text" class="callback__input" placeholder="Ваш номер">
-                    <input type="text" class="callback__input" placeholder="Ваше имя">
-                    <button class="callback__btn">Получить консультацию</button>
+                <form class="callback__form">
+                    <input type="text" class="callback__input" placeholder="Номер телефона*" name="user-phone_consult" required="required">
+                    <input type="text" class="callback__input" placeholder="Имя" name="user-name_consult">
+                    <button class="callback__btn" type="submit">Получить консультацию</button>
                 </form>
                 <p class="callback__note">Специалист свяжется с вами в течение 10 минут</p>
             </div>
@@ -393,8 +394,8 @@
         <header class="description__header">
             <p class="description__title">Как подключить интернет от Ростелеком</p>
             <p class="description__subtitle">На сайте легко и быстро подключить понравившийся тариф: выберите предложение, нажмите "Подключить" и заполните заявку. Есть и другие
-                варианты - закажите обратный звонок или перезвоните по указанному на сайте номеру. Менеджер подберет лучший для Вас вариант. С вами заранее договорятся об удобном времени
-                выезжа технического специалиста для настройки оборудования и подключения интернета. В этот же день Вы сможете воспользоваться всеми услугами. Оформление и настройка оборудования
+                варианты - закажите обратный звонок или перезвоните по указанному на сайте номеру. Менеджер подберет лучший для Вас вариант. С Вами заранее договорятся об удобном времени
+                выезда технического специалиста для настройки оборудования и подключения интернета. В этот же день Вы сможете воспользоваться всеми услугами. Оформление и настройка оборудования
                 бесплатны.
             </p>
         </header>
@@ -630,10 +631,10 @@
         <main class="callback__main">
             <div class="callback-wrapper callback-wrapper_no-image">
                 <p class="callback__title">Остались вопросы по подключению?</p>
-                <form action="" class="callback__form">
-                    <input type="text" class="callback__input" placeholder="Ваш номер">
-                    <input type="text" class="callback__input" placeholder="Ваше имя">
-                    <button class="callback__btn">Получить консультацию</button>
+                <form class="callback__form">
+                    <input type="text" class="callback__input" placeholder="Номер телефона*" name="user-phone_consult" required="required">
+                    <input type="text" class="callback__input" placeholder="Имя" name="user-name_consult">
+                    <button class="callback__btn" type="submit">Получить консультацию</button>
                 </form>
                 <p class="callback__note">Специалист свяжется с вами в течение 10 минут</p>
             </div>

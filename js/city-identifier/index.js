@@ -11,7 +11,7 @@ geo.getCurrentPosition(result => {
     longitude = result.coords.longitude;
     let url = "https://suggestions.dadata.ru/suggestions/api/4_1/rs/geolocate/address";
     let token = "f1f5ea1fea06549f4d0285fd6c94634b2f892f20";
-    let query = { lat: 55.7887, lon: 49.1221 };
+    let query = { lat: latitude, lon: longitude };
     let options = {
         method: "POST",
         mode: "cors",
@@ -30,6 +30,7 @@ geo.getCurrentPosition(result => {
         city = result.suggestions[0].data.city;
         
         cityElem.innerText = city;
+        mobileMenuCityElem.innerText = city;
 
         switch(region) {
             case 'Оренбургская':

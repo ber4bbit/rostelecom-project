@@ -70,8 +70,10 @@
     font-size: 1.4em;
 }
 
-.service__btn {
-    
+@media screen and (max-width: 769px) {
+    .service__features {
+        width: 90%;
+    }
 }
 
 @media screen and (max-width: 501px) {

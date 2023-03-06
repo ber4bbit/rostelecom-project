@@ -59,10 +59,14 @@
     margin-left: 2rem;
 }
 
-@media screen and (max-width: 501px) {
+@media screen and (max-width: 769px) {
     .faq__questions {
         grid-template-columns: 1fr;
     }
+}
+
+@media screen and (max-width: 501px) {
+    
 
     .faq-wrapper {
         width: 80%;

@@ -35,6 +35,7 @@
     width: 100%;
     display: flex;
     margin-bottom: .7rem;
+    align-items: center;
 }
 
 .callback__input {
@@ -43,10 +44,11 @@
     border-radius: 9px;
     background-color: white;
     box-shadow: 0 0 0.3rem gray;
-    padding: .5rem 1rem;
+    padding: 1rem 1rem;
     font-size: 1.1em;
     margin-right: 1rem;
     color: gray;
+    height: max-content;
     transition: box-shadow .1s;
 }
 
@@ -72,17 +74,17 @@
     background-color: var(--orange);
     border: 2px solid transparent;
     color: white;
-    padding: .5rem 2rem;
+    padding: 1rem 2rem;
     font-size: 1em;
     border-radius: 9px;
-    transition: color .2s, background-color .2s, border .2s;
+    height: max-content;
+    transition: box-shadow .2s, border .2s;
 }
 
 .callback__btn:hover {
     cursor: pointer;
-    color: var(--orange);
+    box-shadow: 0 0 .5rem var(--orange);
     border: 2px solid var(--orange);
-    background-color: white;
 }
 
 .callback__note {
@@ -91,6 +93,62 @@
 
 .callback-wrapper_no-image {
     padding: 1rem 0;
+}
+
+@media (max-width: 1025px) {
+    .callback__main {
+        width: 80%;
+    }
+
+    .callback-wrapper {
+        margin-left: 1rem;
+    }
+
+    .callback__title {
+        margin-bottom: 1rem;
+    }
+
+    .callback__input {
+        padding: .5rem 1rem;
+        font-size: .95em;
+    }
+
+    .callback__btn {
+        font-size: .95em;
+        padding: .5rem 1rem;
+    }
+
+    .callback__image {
+        display: none;
+    }
+
+    .callback-wrapper {
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .callback__form {
+        flex-direction: column;
+        /* align-items: center; */
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .callback__input {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .callback__title {
+        margin: 0 auto;
+        margin-bottom: 1rem;
+    }
+
+    .callback__note {
+        margin: 0 auto;
+        margin-top: 1rem;
+    }
+    
 }
 
 @media screen and (max-width: 501px) {
@@ -117,3 +175,4 @@
         margin-bottom: 1.5rem;
     }
 }
+

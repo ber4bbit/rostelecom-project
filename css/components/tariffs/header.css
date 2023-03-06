@@ -4,8 +4,9 @@
     flex-direction: column;
     align-items: center;
     font-family: 'Rostelecom Basis Regular';
-    margin-top: 5rem;
+    margin-top: -5rem;
     padding-bottom: 5rem;
+    padding-top: 10rem;
 }
 
 .tariffs__header {
